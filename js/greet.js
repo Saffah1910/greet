@@ -30,43 +30,37 @@ function totalGreetings() {
         nameElem.innerText = greetTheUser.selectedLanguage(langageType, name)
 
         greetTheUser.getNameCounter(name);
-
+        
         localStorage.setItem('names', JSON.stringify(greetTheUser.getGeetedNames()));
 
-
+        
         numberCounterElem.innerHTML = greetTheUser.counter();
 
-        //    textAreaElem.foreach(textAreaElem => textAreaElem.value="");
+    //    textAreaElem.foreach(textAreaElem => textAreaElem.value="");
 
     };
 
-    // if(!checkedBtn){
+    if(!checkedBtn){
 
-    //         }
-    //messageElem.add(".alert");
+        // function errorHandling(name, lang){
+              if(name ==="" && !langageType){
+                message = "Please enter name and select the radio button"
+              }
+              else if(name ==""){
+                message ="Please enter name"
+              }
+              else if(!langageType){
+                message="Please select language"
+              }
+            }
+        //messageElem.add(".alert");
 
 
-    //messageElem.innerHTML = "Enter Data";
+        //messageElem.innerHTML = "Enter Data";
 
-    //myTimeout = setTimeout(messageElem, 5000);
-
-    function errorHandling(name, lang) {
-
-
-        if (name === "" && !lang) {
-            message = "Please enter name and select the radio button"
-        }
-        else if (name == "") {
-            message = "Please enter name"
-        }
-        else if (!lang) {
-            message = "Please select language"
-        }
-
-    }           
-    // return errorHandling
+        //   myTimeout = setTimeout(messageElem, 5000);
+    
 }
-
 
 
 
@@ -78,7 +72,7 @@ greetBtnElem.addEventListener("click", totalGreetings);
 resetBtnElem.addEventListener("click", function () {
     // alert("are you sure you want to reset");
     location.reload();
-    localStorage.clear();
+    localStorage.clear(); 
 });
 
 
