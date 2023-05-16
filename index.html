@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/greet.css">
+  
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+        <h1>Greetings</h1>
+        <p class="name"></p>
+        <p class="message"></p>
+
+        <!-- <div class="alert">
+
+            <span class="msg">Please enter name / select language</span>
+
+        </div> -->
+
+        <div>
+            
+            <p>Name <input type="text" class="textArea" id="key" placeholder="Please enter name"></p>
+
+            <div class="number">
+                <h5>Name Counter: <span class="counter numberCounter">0</span></h5>
+            </div>
+
+        </div>
+
+        <div class="radioButton">
+            <label class="">
+                <input type="radio" name="radioLanguage" class="radioBtn" value="english">
+                <span class="label-body">English</span>
+            </label>
+            <label class="">
+                <input type="radio" name="radioLanguage" class="radioBtn" value="afrikaans">
+                <span class="label-body">Afrikaans</span>
+            </label>
+            <label class="">
+                <input type="radio" name="radioLanguage" class="radioBtn" value="xhosa">
+                <span class="label-body">isiXhosa</span>
+            </label>
+        </div>
+
+        <br>
+        <div>
+            <button class="greetBtn"> Greet me</button>
+        </div>
+        <br>
+        <div>
+            <button class="resetBtn">Reset</button>
+        </div>
+    </div>
+    
+</body>
+<script src="/js/greet-factory.js" defer="true"></script>
+
+<script src="/js/greet.js" defer="true"></script>   
+</html>
