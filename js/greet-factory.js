@@ -6,17 +6,17 @@ function Greet(namesIn){
     function selectedLanguage(lang, names) {
         var userNames = names;
                  
-            if (lang === "english") {
+            if (lang === "english" && names !=="") {
                 
                 return "Hello, " + userNames.charAt(0).toUpperCase() + userNames.slice(1);
             }
 
-            if (lang === "afrikaans") {
+            if (lang === "afrikaans" && names !=="") {
         
                 return "Hallo, " + userNames.charAt(0).toUpperCase() + userNames.slice(1);
             }
             
-            if (lang === "xhosa") {
+            if (lang === "xhosa" && names !=="") {
           
                 return "Molo, " + userNames.charAt(0).toUpperCase() + userNames.slice(1);
             }
@@ -43,20 +43,20 @@ function Greet(namesIn){
     }
 
 
-// function errors(){
+function errors(){
 
 
-//     if(!name && !checkedBtn){
-//         message = "Please enter name and select the radio button"
-//       }
-//       else if(name ==="" && checkedBtn){
-//         message ="Please enter name"
-//       }
-//       else if(!checkedBtn && name ===""){
-//         message="Please select language"
-//       }
-//       messageElem.innerHTML = message;
-//     }
+    if(!name && !checkedBtn){
+        message = "Please enter name and select the radio button"
+      }
+      else if(name ==="" && checkedBtn){
+        message ="Please enter name"
+      }
+      else if(!checkedBtn && name ===""){
+        message="Please select language"
+      }
+      return message
+    }
   
 
 
@@ -72,7 +72,7 @@ function Greet(namesIn){
         getNameCounter,
         counter,
         getGeetedNames,
-        //errors
+        errors
     }
 
    

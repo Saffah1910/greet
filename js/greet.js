@@ -18,6 +18,7 @@ var greetTheUser = Greet(names);
 // load the counter initially
 numberCounterElem.innerHTML = greetTheUser.counter();
 
+messageElem.innerHTML = greetTheUser.errors();
 
 function totalGreetings() {
 
@@ -44,7 +45,7 @@ function totalGreetings() {
 
     
 
-        //   myTimeout = setTimeout(messageElem, 5000);
+       
     
 }
 
