@@ -43,23 +43,23 @@ function Greet(namesIn){
     }
 
 
-function errors(){
+// function errors(){
 
 
-    if(!name && !checkedBtn){
-        message = "Please enter name and select the radio button"
-      }
-      else if(name ==="" && checkedBtn){
-        message ="Please enter name"
-      }
-      else if(!checkedBtn && name ===""){
-        message="Please select language"
-      }
-    }
+//     if(!name && !checkedBtn){
+//         message = "Please enter name and select the radio button"
+//       }
+//       else if(name ==="" && checkedBtn){
+//         message ="Please enter name"
+//       }
+//       else if(!checkedBtn && name ===""){
+//         message="Please select language"
+//       }
+//       messageElem.innerHTML = message;
+//     }
   
 
 
-messageElem.innerHTML = message;
 
 
 
@@ -72,7 +72,7 @@ messageElem.innerHTML = message;
         getNameCounter,
         counter,
         getGeetedNames,
-        errors
+        //errors
     }
 
    
