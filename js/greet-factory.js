@@ -43,12 +43,36 @@ function Greet(namesIn){
     }
 
 
+function errors(){
+
+
+    if(!name && !checkedBtn){
+        message = "Please enter name and select the radio button"
+      }
+      else if(name ==="" && checkedBtn){
+        message ="Please enter name"
+      }
+      else if(!checkedBtn && name ===""){
+        message="Please select language"
+      }
+    }
+  
+
+
+messageElem.innerHTML = message;
+
+
+
+
+
+
 
     return {
         selectedLanguage,
         getNameCounter,
         counter,
-        getGeetedNames
+        getGeetedNames,
+        errors
     }
 
    

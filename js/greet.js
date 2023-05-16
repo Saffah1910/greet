@@ -16,7 +16,8 @@ const names = JSON.parse(storedNamesString);
 var greetTheUser = Greet(names);
 
 // load the counter initially
-numberCounterElem.innerHTML = greetTheUser.counter()
+numberCounterElem.innerHTML = greetTheUser.counter();
+
 
 function totalGreetings() {
 
@@ -40,22 +41,8 @@ function totalGreetings() {
 
     }
 
-    else{
+
     
-            if(!name && !checkedBtn){
-                message = "Please enter name and select the radio button"
-              }
-              else if(name ==="" && checkedBtn){
-                message ="Please enter name"
-              }
-              else if(!checkedBtn && name ===""){
-                message="Please select language"
-              }
-            }
-            // errorMsg.add(".alert");
-
-
-        messageElem.innerHTML = message;
 
         //   myTimeout = setTimeout(messageElem, 5000);
     
