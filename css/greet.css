@@ -1,4 +1,4 @@
-/* body{
+body{
     background-image: url(/css/background.jpg);
     background-size:cover;
     position:relative;
@@ -44,7 +44,7 @@ color: white;
 }
 .resetBtn:hover{
     background-color: #c1121f;
-}  */
+} 
 
 .alert{
     background-color: rgb(235, 171, 171);
