@@ -5,8 +5,8 @@ let numberCounterElem = document.querySelector(".numberCounter");
 let nameElem = document.querySelector(".name");
 let resetBtnElem = document.querySelector(".resetBtn");
 let messageElem = document.querySelector(".message");
-let alertHideElem = document.querySelector(".alert-hide")
-
+let alertHideElem = document.querySelector(".alert-hide");
+let errorMsg = document.querySelector(".msg");
 
 // reading the string from localStorage
 const storedNamesString = localStorage.getItem('names');
@@ -38,25 +38,24 @@ function totalGreetings() {
 
     //    textAreaElem.foreach(textAreaElem => textAreaElem.value="");
 
-    };
+    }
 
-    if(!checkedBtn){
-
-        // function errorHandling(name, lang){
-              if(name ==="" && !langageType){
+    else{
+    
+            if(name =="" && !checkedBtn){
                 message = "Please enter name and select the radio button"
               }
-              else if(name ==""){
+              else if(name ==="" && checkedBtn){
                 message ="Please enter name"
               }
-              else if(!langageType){
+              else if(!checkedBtn && name !==""){
                 message="Please select language"
               }
             }
-        //messageElem.add(".alert");
+            // errorMsg.add(".alert");
 
 
-        //messageElem.innerHTML = "Enter Data";
+        messageElem.innerHTML = message;
 
         //   myTimeout = setTimeout(messageElem, 5000);
     
