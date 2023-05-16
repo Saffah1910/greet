@@ -42,13 +42,13 @@ function totalGreetings() {
 
     else{
     
-            if(name ==="" && !checkedBtn){
+            if(!name && !checkedBtn){
                 message = "Please enter name and select the radio button"
               }
-              if(name !=="" && checkedBtn){
+              else if(name ==="" && checkedBtn){
                 message ="Please enter name"
               }
-              if(!checkedBtn && name !==""){
+              else if(!checkedBtn && name ===""){
                 message="Please select language"
               }
             }

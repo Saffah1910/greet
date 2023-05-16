@@ -1,4 +1,4 @@
-body{
+ body{
     background-image: url(/css/background.jpg);
     background-size:cover;
     position:relative;
@@ -52,6 +52,6 @@ color: white;
     border: solid 2px rgb(247, 9, 9);
     text-align: center;
     padding: 20px;
-}
+} 
 
 
