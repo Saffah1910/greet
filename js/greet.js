@@ -18,7 +18,7 @@ var greetTheUser = Greet(names);
 // load the counter initially
 numberCounterElem.innerHTML = greetTheUser.counter();
 
-messageElem.innerHTML = greetTheUser.errors();
+// messageElem.innerHTML = greetTheUser.errors();
 
 function totalGreetings() {
 
