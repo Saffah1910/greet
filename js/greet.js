@@ -18,7 +18,7 @@ var greetTheUser = Greet(names);
 // load the counter initially
 numberCounterElem.innerHTML = greetTheUser.counter();
 
-// messageElem.innerHTML = greetTheUser.errors();
+
 
 function totalGreetings() {
 
@@ -32,34 +32,24 @@ function totalGreetings() {
         nameElem.innerText = greetTheUser.selectedLanguage(langageType, name)
 
         greetTheUser.getNameCounter(name);
-        
+
         localStorage.setItem('names', JSON.stringify(greetTheUser.getGeetedNames()));
 
-        
+
         numberCounterElem.innerHTML = greetTheUser.counter();
 
-    //    textAreaElem.foreach(textAreaElem => textAreaElem.value="");
+        //    textAreaElem.foreach(textAreaElem => textAreaElem.value="");
 
     }
 
-
-    
-
-       
-    
+    messageElem.innerHTML = greetTheUser.getErrors();
 }
-
-
-
 greetBtnElem.addEventListener("click", totalGreetings);
-
-
-
 
 resetBtnElem.addEventListener("click", function () {
     // alert("are you sure you want to reset");
     location.reload();
-    localStorage.clear(); 
+    localStorage.clear();
 });
 
 

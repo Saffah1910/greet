@@ -43,28 +43,23 @@ function Greet(namesIn) {
     }
 
 
-    // function errors() {
+    function setErrors(name , checkedBtn) {
 
 
-    //     if (!name && !checkedBtn) {
-    //         message = "Please enter name and select the radio button"
-    //     }
-    //     else if (name === "" && checkedBtn) {
-    //         message = "Please enter name"
-    //     }
-    //     else if (!checkedBtn && name === "") {
-    //         message = "Please select language"
-    //     }
-    //     return message
-    // }
+        if (!name && !checkedBtn) {
+            message = "Please enter name and select the radio button"
+        }
+        else if (name === "" && checkedBtn) {
+            message = "Please enter name"
+        }
+        else if (!checkedBtn && name === "") {
+            message = "Please select language"
+        }
+    }
+    function getErrors(){
+      return "please enter name or select language"
 
-
-
-
-
-
-
-
+    }
 
 
     return {
@@ -72,7 +67,8 @@ function Greet(namesIn) {
         getNameCounter,
         counter,
         getGeetedNames,
-        // errors
+        setErrors,
+        getErrors
     }
 
 
