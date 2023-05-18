@@ -7,13 +7,13 @@ function Greet(namesIn) {
 
 
     function selectedLanguage(lang, names) {
-        // var userNames = names.toLowerCase();
+        var userNames = names.toLowerCase();
         var nameCapital = names.charAt(0).toUpperCase() + names.slice(1)
 
         if (lang === "english" && names !== "") {
 
             return "Hello, " + nameCapital;
-        }
+        }   // resetMessageElem.style.display = "none";
 
         if (lang === "afrikaans" && names !== "") {
 
@@ -52,13 +52,13 @@ function Greet(namesIn) {
         let message = "";
 
         if (!name && !checkedBtn) {
-           message = "Please enter name & select language"
+           message = "Please enter a name & select a language"
         }
         else if (!name && checkedBtn) {
-            message = "Please select language"
+            message = "Please select a language"
         }
         else if (!checkedBtn && name) {
-            message = "Please enter name"
+            message = "Please enter a name"
         }
 
         return message;
@@ -71,10 +71,10 @@ function Greet(namesIn) {
         
      }
 
-    //  function alertForResetBtn(){
+     function alertForResetBtn(){
         
-    //     confirm("are you sure you want to reset?")
-    //  }
+    return "You have succesfully reset"
+     }
 
     return {
         selectedLanguage,
@@ -83,8 +83,7 @@ function Greet(namesIn) {
         getGeetedNames,
         setErrors,
         clearRadio,
-        // getErrors
-        // alertForResetBtn
+        alertForResetBtn
     }
 
 

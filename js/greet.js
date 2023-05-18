@@ -6,6 +6,7 @@ let numberCounterElem = document.querySelector(".numberCounter");
 let nameElem = document.querySelector(".name");
 let resetBtnElem = document.querySelector(".resetBtn");
 let messageElem = document.querySelector(".message");
+let resetMessageElem = document.querySelector(".resetMessage");
 
 
 // reading the string from localStorage
@@ -43,9 +44,12 @@ function totalGreetings() {
     greetTheUser.getNameCounter(name);
 
     if (errorMessage) {
+        
         messageElem.innerHTML = greetTheUser.setErrors(langageType, name);
-
-      
+        messageElem.style.display = "block";
+        setTimeout(function(){
+            messageElem.style.display = "none";
+        },2000)
     }
     else {
 
@@ -64,11 +68,20 @@ function totalGreetings() {
 greetBtnElem.addEventListener("click", totalGreetings);
 
 resetBtnElem.addEventListener("click", function () {
-    // alert("are you sure you want to reset");
-    // greetTheUser.alertForResetBtn();
-    location.reload();
-    localStorage.clear();
-});
+  
+    // resetMessageElem.style.display = "block";
+
+    setTimeout(function(){
+        // resetMessageElem.style.display = "none";
+        location.reload();
+        localStorage.clear();
+    },1000)
+    resetMessageElem.innerHTML= greetTheUser.alertForResetBtn();
+    
+    
+        // location.reload();
+        // localStorage.clear();
+    });
 
 
 
