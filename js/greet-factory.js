@@ -1,24 +1,28 @@
 function Greet(namesIn) {
 
     var tempStorageOfNames = namesIn || {};
+ 
+
+    var message = "";
 
 
     function selectedLanguage(lang, names) {
-        var userNames = names;
+        // var userNames = names.toLowerCase();
+        var nameCapital = names.charAt(0).toUpperCase() + names.slice(1)
 
         if (lang === "english" && names !== "") {
 
-            return "Hello, " + userNames.charAt(0).toUpperCase() + userNames.slice(1);
+            return "Hello, " + nameCapital;
         }
 
         if (lang === "afrikaans" && names !== "") {
 
-            return "Hallo, " + userNames.charAt(0).toUpperCase() + userNames.slice(1);
+            return "Hallo, " + nameCapital;
         }
 
         if (lang === "xhosa" && names !== "") {
 
-            return "Molo, " + userNames.charAt(0).toUpperCase() + userNames.slice(1);
+            return "Molo, " + nameCapital;
         }
 
     }
@@ -45,22 +49,32 @@ function Greet(namesIn) {
 
     function setErrors(name , checkedBtn) {
 
+        let message = "";
 
         if (!name && !checkedBtn) {
-            message = "Please enter name and select the radio button"
+           message = "Please enter name & select language"
         }
-        else if (name === "" && checkedBtn) {
-            message = "Please enter name"
-        }
-        else if (!checkedBtn && name === "") {
+        else if (!name && checkedBtn) {
             message = "Please select language"
         }
-    }
-    function getErrors(){
-      return "please enter name or select language"
+        else if (!checkedBtn && name) {
+            message = "Please enter name"
+        }
 
+        return message;
     }
+   
+    
+    function clearRadio() {
+        let radio = radioBtnElem;
+        radio.checked = false;
+        
+     }
 
+    //  function alertForResetBtn(){
+        
+    //     confirm("are you sure you want to reset?")
+    //  }
 
     return {
         selectedLanguage,
@@ -68,7 +82,9 @@ function Greet(namesIn) {
         counter,
         getGeetedNames,
         setErrors,
-        getErrors
+        clearRadio,
+        // getErrors
+        // alertForResetBtn
     }
 
 
