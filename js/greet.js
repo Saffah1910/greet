@@ -19,24 +19,15 @@ var greetTheUser = Greet(names);
 // load the counter initially
 numberCounterElem.innerHTML = greetTheUser.counter();
 
-myTimer = setTimeout(greetTheUser.setErrors(), 5000);
-clearTimeout(myTimer);
-
-
-
 function totalGreetings() {
 
     var checkedBtn = document.querySelector("input[name='radioLanguage']:checked");
-
-    // if (checkedBtn) {
 
     var langageType = null;
     // ensure a language was selected and if so use the message...
     if (checkedBtn) {
         langageType = checkedBtn.value
     }
-
-
     var name = textAreaElem.value
 
     const errorMessage = greetTheUser.setErrors(name, langageType);
@@ -44,16 +35,19 @@ function totalGreetings() {
     greetTheUser.getNameCounter(name);
 
     if (errorMessage) {
-        
+
         messageElem.innerHTML = greetTheUser.setErrors(langageType, name);
         messageElem.style.display = "block";
-        setTimeout(function(){
+        setTimeout(function () {
             messageElem.style.display = "none";
-        },2000)
+        }, 2000)
     }
     else {
-
         nameElem.innerText = greetTheUser.selectedLanguage(langageType, name);
+        nameElem.style.display = "block";
+        setTimeout(function () {
+            nameElem.style.display = "none";
+        }, 5000);
 
         localStorage.setItem('names', JSON.stringify(greetTheUser.getGeetedNames()));
 
@@ -61,27 +55,21 @@ function totalGreetings() {
 
         textAreaElem.value = "";
 
-        greetTheUser.clearRadio();
+        greetTheUser.clearRadioButtons();
     }
 
 }
 greetBtnElem.addEventListener("click", totalGreetings);
 
 resetBtnElem.addEventListener("click", function () {
-  
-    // resetMessageElem.style.display = "block";
-
-    setTimeout(function(){
-        // resetMessageElem.style.display = "none";
+    setTimeout(function () {
         location.reload();
         localStorage.clear();
-    },1000)
-    resetMessageElem.innerHTML= greetTheUser.alertForResetBtn();
-    
-    
-        // location.reload();
-        // localStorage.clear();
-    });
+    }, 1000);
+
+    nameElem.innerHTML = greetTheUser.alertForResetBtn();
+    nameElem.classList.add(greetTheUser.addGreen());
+});
 
 
 

@@ -16,16 +16,13 @@
     font-size: 50px;
 }
 
-.radioButton input{
+.radioButton{
     accent-color: #f72585;
- 
-
 }
 .greetBtn{
     font-size: 20px;
     border: 2px solid black;
     background-color:#f72585;
-
     color: black;
 }
 .greetBtn:hover{
@@ -60,17 +57,13 @@ color: white;
     text-align: center;
     padding: 20px;
 } 
-/* .numberAndName{
-    display: flex;
-    text-align: center;
-    margin-left: 500px;
-} */
+
 ::placeholder {
     font-style: italic;
     font-size: 1em;
     opacity: 0.5;
      color: #f72585;
-    /* padding: 10px; */
+
  
 
   }
@@ -78,4 +71,7 @@ color: white;
     color: #c1121f;
    
    
+  }
+  .green{
+    color: green;
   }

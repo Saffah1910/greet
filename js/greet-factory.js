@@ -1,34 +1,30 @@
 function Greet(namesIn) {
 
     var tempStorageOfNames = namesIn || {};
- 
-
-    var message = "";
-
 
     function selectedLanguage(lang, names) {
-        var userNames = names.toLowerCase();
-        var nameCapital = names.charAt(0).toUpperCase() + names.slice(1)
+        var userNames = names;
+        // var nameCapital = userNames.charAt(0).toUpperCase() + userNames.slice(1)
 
         if (lang === "english" && names !== "") {
 
-            return "Hello, " + nameCapital;
-        }   // resetMessageElem.style.display = "none";
+            return "Hello, " + userNames.charAt(0).toUpperCase() + userNames.slice(1).toLowerCase();
+        }
 
         if (lang === "afrikaans" && names !== "") {
 
-            return "Hallo, " + nameCapital;
+            return "Hallo, " + userNames.charAt(0).toUpperCase() + userNames.slice(1).toLowerCase();
         }
 
         if (lang === "xhosa" && names !== "") {
 
-            return "Molo, " + nameCapital;
+            return "Molo, " + userNames.charAt(0).toUpperCase() + userNames.slice(1).toLowerCase();
         }
 
     }
 
     function getNameCounter(name) {
-
+        name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
         if (tempStorageOfNames[name] === undefined) {
             tempStorageOfNames[name] = 1
         }
@@ -38,21 +34,19 @@ function Greet(namesIn) {
         var newList = Object.keys(tempStorageOfNames)
         console.log(newList);
         return newList.length;
-    }
-
-
+    };
 
     function getGeetedNames() {
         return tempStorageOfNames
-    }
+    };
 
 
-    function setErrors(name , checkedBtn) {
+    function setErrors(name, checkedBtn) {
 
         let message = "";
 
         if (!name && !checkedBtn) {
-           message = "Please enter a name & select a language"
+            message = "Please enter a name & select a language"
         }
         else if (!name && checkedBtn) {
             message = "Please select a language"
@@ -62,19 +56,22 @@ function Greet(namesIn) {
         }
 
         return message;
-    }
-   
-    
-    function clearRadio() {
-        let radio = radioBtnElem;
-        radio.checked = false;
-        
-     }
+    };
 
-     function alertForResetBtn(){
-        
-    return "You have succesfully reset"
-     }
+    function clearRadioButtons() {
+        var langChecked = document.querySelectorAll("input[type=radio]");
+        for (var i = 0; i < langChecked.length; i++) {
+            langChecked[i].checked = false;
+        }
+    };
+    function alertForResetBtn() {
+
+        return "You have succesfully reset"
+    };
+
+    function addGreen() {
+        return "green"
+    };
 
     return {
         selectedLanguage,
@@ -82,12 +79,10 @@ function Greet(namesIn) {
         counter,
         getGeetedNames,
         setErrors,
-        clearRadio,
-        alertForResetBtn
-    }
-
-
-
+        alertForResetBtn,
+        addGreen,
+        clearRadioButtons
+    };
 }
 
 
