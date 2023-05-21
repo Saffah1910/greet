@@ -4,7 +4,6 @@ function Greet(namesIn) {
 
     function selectedLanguage(lang, names) {
         var userNames = names;
-        // var nameCapital = userNames.charAt(0).toUpperCase() + userNames.slice(1)
 
         if (lang === "english" && names !== "") {
 
@@ -66,13 +65,24 @@ function Greet(namesIn) {
     };
     function alertForResetBtn() {
 
-        return "You have succesfully reset"
+        return "You have successfully reset the counter"
     };
 
     function addGreen() {
         return "green"
     };
-
+    function validData(name) {
+        let regEx = /^[a-zA-Z]+$/
+        return regEx.test(name)
+    };
+    function invalidMessage(name) {
+        if (validData(name) == false) {
+            return "Enter alphabets only"
+        }
+    };
+    function addRed() {
+        return "red"
+    };
     return {
         selectedLanguage,
         getNameCounter,
@@ -81,7 +91,10 @@ function Greet(namesIn) {
         setErrors,
         alertForResetBtn,
         addGreen,
-        clearRadioButtons
+        clearRadioButtons,
+        validData,
+        invalidMessage,
+        addRed
     };
 }
 

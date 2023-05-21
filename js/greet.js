@@ -7,7 +7,13 @@ let nameElem = document.querySelector(".name");
 let resetBtnElem = document.querySelector(".resetBtn");
 let messageElem = document.querySelector(".message");
 let resetMessageElem = document.querySelector(".resetMessage");
+// let regEx = /^\d{3}-\d{3}-\d{4}$/;
 
+// regEx.match(unalo)
+
+// function isPattern(userInput) {
+//     return /^\d{3}-\d{3}-\d{4}$/.test(userInput);
+//   }
 
 // reading the string from localStorage
 const storedNamesString = localStorage.getItem('names');
@@ -23,6 +29,8 @@ function totalGreetings() {
 
     var checkedBtn = document.querySelector("input[name='radioLanguage']:checked");
 
+
+
     var langageType = null;
     // ensure a language was selected and if so use the message...
     if (checkedBtn) {
@@ -36,13 +44,27 @@ function totalGreetings() {
 
     if (errorMessage) {
 
-        messageElem.innerHTML = greetTheUser.setErrors(langageType, name);
-        messageElem.style.display = "block";
+        nameElem.innerHTML = greetTheUser.setErrors(langageType, name);
+        nameElem.style.display = "block";
         setTimeout(function () {
-            messageElem.style.display = "none";
-        }, 2000)
+            nameElem.style.display = "none";
+        }, 2000);
+        nameElem.classList.add(greetTheUser.addRed());
     }
+    else if (greetTheUser.validData(textAreaElem.value) == false) {
+       nameElem.innerHTML = greetTheUser.invalidMessage(name);
+       nameElem.classList.add(greetTheUser.addRed());
+       nameElem.style.display = "block";
+       setTimeout(function(){
+        nameElem.style.display= "none"
+       },2000);
+       textAreaElem.value = "";
+
+       greetTheUser.clearRadioButtons();
+    }
+
     else {
+        nameElem.classList.remove(greetTheUser.addRed());
         nameElem.innerText = greetTheUser.selectedLanguage(langageType, name);
         nameElem.style.display = "block";
         setTimeout(function () {
@@ -57,11 +79,15 @@ function totalGreetings() {
 
         greetTheUser.clearRadioButtons();
     }
+    
+
+
 
 }
 greetBtnElem.addEventListener("click", totalGreetings);
 
 resetBtnElem.addEventListener("click", function () {
+
     setTimeout(function () {
         location.reload();
         localStorage.clear();
