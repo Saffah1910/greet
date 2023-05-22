@@ -44,7 +44,7 @@
      color: #f72585;
      margin: 0 auto;
      background-color: lightpink;
-     background-image: url('../css/hello.jpg');
+     background-image: url('./hello.jpg');
      background-repeat: no-repeat;
      border: 1px solid;
      padding: 15px 20px 15px 60px;
