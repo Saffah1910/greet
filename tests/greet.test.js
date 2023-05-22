@@ -29,13 +29,17 @@ describe("Greet function", function () {
             var greetTests = Greet();
             assert.equal("Please select a language", greetTests.setErrors("", !""));
         });
+        it("should return the message 'Enter alphabets only' if any data other than alphabets is entrered",function(){
+            var greetTests = Greet();
+            assert.equal("Enter alphabets only", greetTests.invalidMessage('saffah123'))
+        });
 
      
     });
     describe("Return the right color for each message", function(){
         it("should return a class name of 'red' if there is an no/invalid data is entered", function () {
             let greetTests = Greet();
-            
+
             assert.equal("red", greetTests.addRed())
         });
         it("should return a class name of 'green' if the counter has successfully reset",function(){
