@@ -105,3 +105,9 @@
      width: fit-content;
      color: #c1121f;
  }
+ @media(max-width:440px) {
+    .radioButton label{
+        display: flex;
+        flex-direction: column;
+    }
+ }
