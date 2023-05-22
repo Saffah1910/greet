@@ -1,3 +1,4 @@
+
 describe("Greet function", function () {
     describe("Input and errors", function () {
 
@@ -28,6 +29,20 @@ describe("Greet function", function () {
             var greetTests = Greet();
             assert.equal("Please select a language", greetTests.setErrors("", !""));
         });
+
+     
+    });
+    describe("Return the right color for each message", function(){
+        it("should return a class name of 'red' if there is an no/invalid data is entered", function () {
+            let greetTests = Greet();
+            
+            assert.equal("red", greetTests.addRed())
+        });
+        it("should return a class name of 'green' if the counter has successfully reset",function(){
+            let greetTests = Greet();
+            assert.equal("green",greetTests.addGreen());
+        });
+
     });
     
 

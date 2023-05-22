@@ -87,14 +87,21 @@ function totalGreetings() {
 greetBtnElem.addEventListener("click", totalGreetings);
 
 resetBtnElem.addEventListener("click", function () {
+    if(numberCounterElem !==0){
+        setTimeout(function () {
+            location.reload();
+            localStorage.clear();
+        }, 2000);
+    
+        nameElem.innerHTML = greetTheUser.alertForResetBtn();
+        nameElem.classList.add(greetTheUser.addGreen());
+    }
+    else if(numberCounterElem = 0){
+        nameElem.innerHTML = "nothing to reset";
+        // return "nothing to reset"
+    }
 
-    setTimeout(function () {
-        location.reload();
-        localStorage.clear();
-    }, 1000);
-
-    nameElem.innerHTML = greetTheUser.alertForResetBtn();
-    nameElem.classList.add(greetTheUser.addGreen());
+ 
 });
 
 
