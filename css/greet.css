@@ -114,18 +114,17 @@
      color: #c1121f;
  }
  @media(max-width:440px) {
-    .radioButton label{
+    .radioButton{
         display: flex;
         flex-direction: column;
+       
     }
- }
- /* text-align: center;
- border: 1px solid;
- margin: 0 auto;
- padding: 15px 10px 15px 50px;
- background-repeat: no-repeat;
- background-position: 10px center;
 
- background-color: lightpink;
- background-image: url('/css/hello.png');
- width: fit-content; */
+ .container {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+
+}
+ }
