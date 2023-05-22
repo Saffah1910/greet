@@ -37,7 +37,7 @@ describe("Greet function", function () {
         });
     });
 
-    describe("Return the right color for each message", function () {
+    describe("Return the right class for each error message", function () {
         it("should return a class name of 'red' if there is an no/invalid data is entered", function () {
             let greetTests = Greet();
 
