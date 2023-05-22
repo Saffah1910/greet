@@ -60,7 +60,7 @@ function totalGreetings() {
         nameElem.style.display = "block";
         setTimeout(function () {
             nameElem.style.display = "none";
-        }, 10000);
+        }, 5000);
 
         localStorage.setItem('names', JSON.stringify(greetTheUser.getGeetedNames()));
         numberCounterElem.innerHTML = greetTheUser.counter();

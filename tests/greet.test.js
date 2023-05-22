@@ -33,7 +33,7 @@ describe("Greet function", function () {
         });
         it("if any data besides alphabets is entered return the message : Enter alphabets only", function () {
             var greetTests = Greet();
-            assert.equal("Enter alphabets only", greetTests.invalidMessage('saffah123'))
+            assert.equal("Enter alphabets only", greetTests.invalidMessage('123'))
         });
     });
 
