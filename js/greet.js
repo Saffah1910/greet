@@ -60,7 +60,7 @@ function totalGreetings() {
         nameElem.style.display = "block";
         setTimeout(function () {
             nameElem.style.display = "none";
-        }, 5000);
+        }, 10000);
 
         localStorage.setItem('names', JSON.stringify(greetTheUser.getGeetedNames()));
         numberCounterElem.innerHTML = greetTheUser.counter();
@@ -71,19 +71,16 @@ function totalGreetings() {
 greetBtnElem.addEventListener("click", totalGreetings);
 
 resetBtnElem.addEventListener("click", function () {
-    // if(numberCounterElem !==0){
+    
+        numberCounterElem.innerHTML = 0;
         setTimeout(function () {
             location.reload();
             localStorage.clear();
-        }, 2000);
+         }, 3000);
     
-        nameElem.innerHTML = greetTheUser.alertForResetBtn();
-        nameElem.classList.add(greetTheUser.addGreen());
-    // }
-    // else if(numberCounterElem = 0){
-    //     nameElem.innerHTML = "nothing to reset";
-    
-    // }
+        messageElem.innerHTML = greetTheUser.alertForResetBtn();
+        messageElem.classList.add(greetTheUser.addGreen());
+  
 
  
 });
