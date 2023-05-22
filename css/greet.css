@@ -44,7 +44,7 @@
      color: #f72585;
      margin: 0 auto;
      background-color: lightpink;
-     background-image: url('/css/hello.jpg');
+     background-image: url('../css/hello.jpg');
      background-repeat: no-repeat;
      border: 1px solid;
      padding: 15px 20px 15px 60px;
@@ -96,7 +96,7 @@
      background-position: 10px center;
      color: #4F8A10;
      background-color: #DFF2BF;
-     background-image: url('/css/resetGreen.png');
+     background-image: url('../css/resetGreen.png');
      width: fit-content;
 
 
@@ -109,7 +109,7 @@
      background-repeat: no-repeat;
      background-position: 10px center;
      background-color: #ff9b85;
-     background-image: url('/css/error.jpg');
+     background-image: url('../css/error.jpg');
      width: fit-content;
      color: #c1121f;
  }
