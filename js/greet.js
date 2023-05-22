@@ -7,13 +7,7 @@ let nameElem = document.querySelector(".name");
 let resetBtnElem = document.querySelector(".resetBtn");
 let messageElem = document.querySelector(".message");
 let resetMessageElem = document.querySelector(".resetMessage");
-// let regEx = /^\d{3}-\d{3}-\d{4}$/;
 
-// regEx.match(unalo)
-
-// function isPattern(userInput) {
-//     return /^\d{3}-\d{3}-\d{4}$/.test(userInput);
-//   }
 
 // reading the string from localStorage
 const storedNamesString = localStorage.getItem('names');
@@ -28,9 +22,6 @@ numberCounterElem.innerHTML = greetTheUser.counter();
 function totalGreetings() {
 
     var checkedBtn = document.querySelector("input[name='radioLanguage']:checked");
-
-
-
     var langageType = null;
     // ensure a language was selected and if so use the message...
     if (checkedBtn) {
@@ -72,22 +63,15 @@ function totalGreetings() {
         }, 5000);
 
         localStorage.setItem('names', JSON.stringify(greetTheUser.getGeetedNames()));
-
         numberCounterElem.innerHTML = greetTheUser.counter();
-
         textAreaElem.value = "";
-
         greetTheUser.clearRadioButtons();
     }
-    
-
-
-
 }
 greetBtnElem.addEventListener("click", totalGreetings);
 
 resetBtnElem.addEventListener("click", function () {
-    if(numberCounterElem !==0){
+    // if(numberCounterElem !==0){
         setTimeout(function () {
             location.reload();
             localStorage.clear();
@@ -95,11 +79,11 @@ resetBtnElem.addEventListener("click", function () {
     
         nameElem.innerHTML = greetTheUser.alertForResetBtn();
         nameElem.classList.add(greetTheUser.addGreen());
-    }
-    else if(numberCounterElem = 0){
-        nameElem.innerHTML = "nothing to reset";
-        // return "nothing to reset"
-    }
+    // }
+    // else if(numberCounterElem = 0){
+    //     nameElem.innerHTML = "nothing to reset";
+    
+    // }
 
  
 });
