@@ -1,6 +1,6 @@
 
 describe("Greet function", function () {
-    describe("Input and errors", function () {
+    describe("Inputs", function () {
 
         it("if the name Amy is entered into the textbox and the language Xhosa is selected at the radio button return the message Molo, Amy", function () {
             var greetTests = Greet();
@@ -17,6 +17,8 @@ describe("Greet function", function () {
             assert.equal("Hallo, Peter", greetTests.selectedLanguage("afrikaans", "peter"));
 
         });
+    });
+    describe("Errors", function () {
         it('if no name and no languge is selected return message : Please enter a name & select a language', function () {
             var greetTests = Greet();
             assert.equal("Please enter a name & select a language", greetTests.setErrors("", ""));
@@ -29,25 +31,22 @@ describe("Greet function", function () {
             var greetTests = Greet();
             assert.equal("Please select a language", greetTests.setErrors("", !""));
         });
-        it("should return the message 'Enter alphabets only' if any data other than alphabets is entrered",function(){
+        it("if any data besides alphabets is entered return the message : Enter alphabets only", function () {
             var greetTests = Greet();
             assert.equal("Enter alphabets only", greetTests.invalidMessage('saffah123'))
         });
-
-     
     });
-    describe("Return the right color for each message", function(){
+
+    describe("Return the right color for each message", function () {
         it("should return a class name of 'red' if there is an no/invalid data is entered", function () {
             let greetTests = Greet();
 
             assert.equal("red", greetTests.addRed())
         });
-        it("should return a class name of 'green' if the counter has successfully reset",function(){
+        it("should return a class name of 'green' if the counter has successfully reset", function () {
             let greetTests = Greet();
-            assert.equal("green",greetTests.addGreen());
+            assert.equal("green", greetTests.addGreen());
         });
 
     });
-    
-
 });
