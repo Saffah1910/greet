@@ -72,7 +72,7 @@ function Greet(namesIn) {
         return "green"
     };
     function validData(name) {
-        let regEx = /^[a-zA-Z]+$/
+        let regEx = /^[a-zA-Z]\S+$/
         return regEx.test(name)
     };
     function invalidMessage(name) {
